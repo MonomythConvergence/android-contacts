@@ -14,13 +14,13 @@ public class BaseListDiffCallback <T extends ListDiffInterface<T>> extends DiffU
 
     @Override
     public boolean areContentsTheSame(@NonNull T  oldItem, @NonNull T  newItem) {
-        return oldItem.theSameAs(newItem);
+        return oldItem.equals(newItem); //вернул исходные методы, которые в первый раз второпях потёр
     }
 
     @Nullable
     @Override
     public Object getChangePayload(@NonNull T  oldItem, @NonNull T  newItem) {
-        return oldItem.theSameAs(newItem);
+        return newItem; //вернул исходные методы, которые в первый раз второпях потёр
     }
 
 }
